@@ -19,10 +19,6 @@
 
 ## Features
 
-- View a variety of movies from different Genres and Directors
-- Add or remove movies from YOUR Favorites List
-- Learn more about your favorite movie.
-
 
 ### Prerequisites
 - Python 3.8.7
