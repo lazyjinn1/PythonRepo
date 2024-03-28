@@ -4,7 +4,7 @@
 ## Table of Contents
 
 - [Screenshots](#screenshots)
-- [Features](#features)
+- [Tasks](#tasks)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Build](#build)
@@ -17,7 +17,11 @@
 ![plot]
 
 
-## Features
+## Tasks
+* Task 1.2
+    - For Task 1.2, I was tasked with choosing the data structure for my Recipe App.
+        - I will personally be using a List structure since I want this to be mutable. While being quick to view and load would be beneficial, being able to more freely edit the lists and structures would be more ideal.
+        
 
 
 ### Prerequisites
