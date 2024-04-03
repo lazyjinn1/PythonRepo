@@ -531,6 +531,8 @@ def delete_recipe():
             print("Invalid input. Please Enter a valid integer.")
 
 def exit_program():
+    print('==========================================')
+    print('Thank you for using our application! We hope to see you next time!')
     session.commit()
     session.close()
     engine.close()
