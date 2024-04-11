@@ -11,11 +11,6 @@ class MyTestClass(TestCase):
             price='23.71'
         )
 
-    # def setUp():
-    #     return
-    # def tearDown():
-    #     return
-    
     def test_book_name(self):
         book = Book.objects.get(id=1)
         field_label = book._meta.get_field('name').verbose_name
