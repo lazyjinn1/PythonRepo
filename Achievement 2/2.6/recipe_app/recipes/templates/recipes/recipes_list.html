@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Insatiable</title>
+        <link rel="stylesheet" href="../../static/recipes/css/recipe_list.css" >
+    </head>
+
+    <body>
+        <section class = "footer">
+            <a href ="{%url 'logout' %}"> 
+                <button>Logout</button>  
+            </a>
+        </section>
+        <section class = "main-recipe-section" id="main-section">
+            <h1>Recipe List</h1>
+            <div class = "recipe-list">
+                {% for recipe in recipe_list %}
+                    <div class="recipe-square">
+                        <a href="{{recipe.get_absolute_url}}">
+                            <img src="{{recipe.pic.url}}" class = "recipe-image" />
+                            <h2 class="recipe-image-caption">{{recipe.recipe_name}}</h2>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+        
+    </body>
+</html>

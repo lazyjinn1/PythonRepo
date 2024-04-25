@@ -1,0 +1,52 @@
+body{
+    background: radial-gradient(#e66465, #9198e5);
+    overflow: hidden;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+.hero-banner{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.hero-banner .hero-banner-title{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    font-size: 120px;
+}
+
+.hero-banner .intro{
+    text-align: center;
+    width: 100%;
+    position: absolute;
+}
+
+.hero-banner .intro button{
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgb(167, 73, 245);
+    font-weight: bolder;
+    padding: 5px;
+    transition: all .7s ease;
+}
+
+.hero-banner .intro button:hover{
+    background-color: black;
+    color: rgb(167, 73, 245);
+    transform: scale(1.2);
+}
+
+.hero-banner .intro button:active{
+    background-color: black;
+    color: rgb(167, 73, 245);
+    transform: scale(1);
+}
+
+@media screen and (max-width: 500px) {
+    .hero-banner .hero-banner-title{
+        font-size: 20vw;
+        top: 25%;
+    }
+}
