@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Search</title>
+    <link rel="stylesheet" href="../../static/recipes/css/recipe_search.css">
+</head>
+<body>
+    <section class = "navbar">
+        <a href="/recipes/home">
+            <button>Home</button>
+        </a>
+        <a href ="{%url 'logout' %}"> 
+            <button>Logout</button>  
+        </a>
+    </section>
+    <form action="" method="POST">
+        <h1>Search for Recipes</h1>
+        {% csrf_token %}
+        <div class="form-field">
+            <label for="id_recipe_name">Recipe Name:</label>
+            {{ form.recipe_name }}
+        </div>
+        <div class="form-field">
+            <label for="id_ingredient">Ingredient:</label>
+            {{ form.ingredient }}
+        </div>
+        <div class="form-field">
+            <label for="id_difficulty">Difficulty:</label>
+            {{ form.difficulty }}
+        </div>
+        <div class="form-field">
+            <label for="id_min_cooking_time">Min Cooking Time (min):</label>
+            {{ form.min_cooking_time }}
+        </div>
+        <div class="form-field">
+            <label for="id_max_cooking_time">Max Cooking Time (min):</label>
+            {{ form.max_cooking_time }}
+        </div>
+        <button type="submit">Search</button>
+    </form>
+       
+    <div class="recipe-list">
+        {% for recipe in recipes %}
+            <div class="recipe-square">
+                <a href="{{ recipe.get_absolute_url }}">
+                    <img src="{{ recipe.pic.url }}" class="recipe-image" />
+                    <h2 class="recipe-image-caption">{{ recipe.recipe_name }}</h2>
+                </a>
+            </div>
+            {% empty %}
+                <p>No recipes found.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
