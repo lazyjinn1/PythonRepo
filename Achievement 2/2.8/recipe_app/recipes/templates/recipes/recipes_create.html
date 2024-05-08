@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Recipe</title>
+    <link rel="stylesheet" href="../../static/recipes/css/recipe_search.css">
+</head>
+<body>
+    <section class = "navbar">
+        <a href="/recipes/home">
+            <button>Home</button>
+        </a>
+        <a href ="{%url 'logout' %}"> 
+            <button>Logout</button>  
+        </a>
+    </section>
+    <h1>Add a Recipe:</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Recipe</button>
+    </form>
+</body>
+</html>

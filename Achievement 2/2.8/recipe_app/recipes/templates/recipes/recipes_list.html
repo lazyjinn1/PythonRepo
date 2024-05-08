@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Insatiable</title>
+        <link rel="stylesheet" href="../../static/recipes/css/recipe_list.css" >
+    </head>
+
+    <body>
+        <section class = "navbar">
+            <a href="/recipes/home">
+                <button>Home</button>
+            </a>
+            <a href ="{%url 'logout' %}"> 
+                <button>Logout</button>  
+            </a>
+            <form method="get" action="{% url 'recipes:recipes_search' %}">
+                {{ form.as_p }}
+                <button type="submit">Search</button>
+            </form>
+            <form method="get" action="{% url 'recipes:charts_search' %}">
+                {{ form.as_p }}
+                <button type="submit">Analytics</button>
+            </form>
+            <form method="get" action="{% url 'recipes:create_recipe' %}">
+                {{ form.as_p }}
+                <button type="submit">Add New Recipe</button>
+            </form>
+        </section>
+
+        <section class = "main-recipe-section" id="main-section">
+            <h1>Recipe List</h1>
+            <div class = "recipe-list">
+                {% for recipe in recipe_list %}
+                    <div class="recipe-square">
+                        <a href="{{recipe.get_absolute_url}}">
+                            <img src="{{recipe.pic.url}}" class = "recipe-image" />
+                            <h2 class="recipe-image-caption">{{recipe.recipe_name}}</h2>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+        <section class = "footer">
+            <h3>About the developer</h3>
+            <p>Jeriko Carrera is a Full-Stack Web Developer with a love for Python and JavaScript.</p>
+            <p>Come learn more about him <a href = "https://carrerajeriko.com" target="_blank" rel="noreferrer"> here: </a>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Search</title>
+    <link rel="stylesheet" href="../../static/recipes/css/recipe_search.css">
+</head>
+<body>
+    <section class = "navbar">
+        <a href="/recipes/home">
+            <button>Home</button>
+        </a>
+        <a href ="{%url 'logout' %}"> 
+            <button>Logout</button>  
+        </a>
+    </section>
+
+    <div class="data-analytics">
+        <h1>Data Analytics</h1>
+        <hr>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.chart_type }}
+            <button type="submit">Generate Analytics</button>
+        </form>
+
+        <br>
+
+        {% if recipes_df %}
+            <img src="data:image/png;base64, {{chart|safe}}">
+        {% else %}
+            <h3>No data</h3>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>
